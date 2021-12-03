@@ -1,3 +1,7 @@
+package day02
+
+import readInput
+
 enum class Direction {
     up,
     down,
@@ -59,16 +63,16 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        val finalPosition = input.fold(PositionPart2()) { acc ,x ->
+        val finalPosition = input.fold(PositionPart2()) { acc, x ->
             acc.applyCommand(Command.parseInput(x))
         }
         return finalPosition.horiz * finalPosition.depth
     }
 
-    val testInput = readInput("Day02_test")
+    val testInput = readInput("day02/Day02_test")
     check(part1(testInput) == 150)
 
-    val input = readInput("Day02")
+    val input = readInput("day02/Day02")
     println(part1(input))
     println(part2(input))
 }

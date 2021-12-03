@@ -1,3 +1,7 @@
+package day01
+
+import readInput
+
 fun main() {
     fun countIncreases(measurements: List<Int>) = measurements.filterIndexed { i, v ->
         i != 0 && v > measurements[i - 1]
@@ -24,10 +28,10 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
+    val testInput = readInput("day01/Day01_test")
     check(part1(testInput) == 7)
 
-    val input = readInput("Day01")
+    val input = readInput("day01/Day01")
     println(part1(input))
     println(part2(input))
 }
