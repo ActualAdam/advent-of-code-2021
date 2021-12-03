@@ -28,10 +28,10 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("day01/Day01_test")
+    val testInput = readInput("day01", test = true)
     check(part1(testInput) == 7)
 
-    val input = readInput("day01/Day01")
+    val input = readInput("day01")
     println(part1(input))
     println(part2(input))
 }

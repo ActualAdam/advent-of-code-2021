@@ -69,10 +69,10 @@ fun main() {
         return finalPosition.horiz * finalPosition.depth
     }
 
-    val testInput = readInput("day02/Day02_test")
+    val testInput = readInput("day02", test = true)
     check(part1(testInput) == 150)
 
-    val input = readInput("day02/Day02")
+    val input = readInput("day02")
     println(part1(input))
     println(part2(input))
 }
