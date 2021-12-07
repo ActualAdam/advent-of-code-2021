@@ -23,8 +23,11 @@ fun main() {
 
     fun part2(input: List<String>): Int {
         val rawMeasurements = input.map { it.toInt() }
-        val slidingWindows = computeSlidingWindows(rawMeasurements)
-        return countIncreases(slidingWindows)
+        val sums = rawMeasurements.windowed(3 ) {
+            it.sum()
+        }
+
+        return countIncreases(sums)
     }
 
     // test if implementation meets criteria from the description, like:
