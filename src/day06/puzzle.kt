@@ -9,7 +9,7 @@ fun main() {
         val oldFishTimer = 6
         val parsed = input.first().trim().split(",").map(String::toInt)
 
-        fun reproduce(curDay: Int, finalDay: Int, acc: List<Int>): List<Int> {
+        tailrec fun reproduce(curDay: Int, finalDay: Int, acc: List<Int>): List<Int> {
             println("$curDay, ${acc.count()}")
             if (curDay == finalDay) {
                 return acc
@@ -35,7 +35,7 @@ fun main() {
             .toList()
             .map { Pair(it.first, it.second.toLong()) }
 
-        fun reproduce(curDay: Int, finalDay: Int, acc: List<Pair<Int, Long>>): List<Pair<Int, Long>> {
+        tailrec fun reproduce(curDay: Int, finalDay: Int, acc: List<Pair<Int, Long>>): List<Pair<Int, Long>> {
             println("$curDay, ${acc.count()}")
             if (curDay == finalDay) {
                 return acc
