@@ -16,27 +16,14 @@ fun main() {
         val adjacencyList = grid.mapIndexed { y, row ->
             // remember that the double array refers to cartesian positions in opposite order because of the data structure: y,x row,col
             row.mapIndexed { x, height ->
-                val left = if (x != 0) {
-                    grid[y][x - 1]
-                } else {
-                    null
-                }
-                val right = if (x != maxX) {
-                    grid[y][x + 1]
-                } else {
-                    null
-                }
-                val up = if (y != 0) {
-                    grid[y - 1][x]
-                } else {
-                    null
-                }
-                val down = if (y != maxY) {
-                    grid[y + 1][x]
-                } else {
-                    null
-                }
-                Pair(height, listOfNotNull(left, right, up, down))
+                val left = if (x != 0) grid[y][x - 1] else null
+                val right = if (x != maxX) grid[y][x + 1] else null
+                val up = if (y != 0) grid[y - 1][x] else null
+                val down = if (y != maxY) grid[y + 1][x] else null
+                Pair(
+                    height,
+                    listOfNotNull(left, right, up, down)
+                )
             }
         }.flatten()
 
