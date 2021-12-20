@@ -19,7 +19,7 @@ fun main() {
         val testInput = readInput(DAY, test = true)
         val actual = part.invoke(testInput)
         check(actual == expected)   {
-            "$part expected $expected, gpt $actual"
+            "$part expected $expected, got $actual"
         }
     }
 
